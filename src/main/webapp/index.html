@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <h2>Display Weather</h2>
+</head>
+<body>
+    This is a simple app for testing weather api.
+
+    <script type="text/javascript">
+        function fetchCityRecord(cityName) {
+            var host = document.location.href;
+            window.location.href = host + 'v1/weather/city/' + cityName.value ;
+        }
+    </script>
+
+    <form name="cityForm"  >
+        <br>
+        Enter desired City:<br>
+        <input type="text" name="cityName">
+        <br><br>
+        <input type="button" value="Submit"  onclick="fetchCityRecord(cityName);" > &nbsp;&nbsp;
+        <input type="reset" value="Cancel">
+
+        <p></p> <p></p>
+
+        <a href="/v1/weather/mostly_referred_cities">Top 5 Cities</a>
+        <br>
+        <a href="/v1/weather/least_referred_cities">Bottom 5 Cities</a>
+        <br>
+        <a href="/v1/weather/recently_referred_cities">Recent 5 Cities</a>
+    </form>
+
+</body>
+</html>
